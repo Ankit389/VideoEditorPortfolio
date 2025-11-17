@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaEnvelope, FaUser, FaMessage, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaCommentDots, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -170,7 +170,7 @@ const Contact = () => {
               {/* Message Field */}
               <div className="mb-8">
                 <label htmlFor="message" className="block text-white font-medium mb-2 flex items-center gap-2">
-                  <FaMessage className="text-purple-400" />
+                  <FaCommentDots className="text-purple-400" />
                   <span>Message</span>
                 </label>
                 <textarea
