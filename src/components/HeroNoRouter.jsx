@@ -110,7 +110,7 @@ const HeroNoRouter = ({ backgroundVideo, onPortfolioClick, onDemoClick, demoVide
                     <img
                       src="/images/profile-photo.jpg"
                       alt="Purnima Rani - Video Editor"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         // Fallback agar image nahi mile
                         e.target.style.display = 'none';
