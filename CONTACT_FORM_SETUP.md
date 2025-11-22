@@ -3,6 +3,7 @@
 ## ✅ **Contact Form Ban Gaya!**
 
 Contact form component ban gaya hai with:
+
 - ✅ Name field
 - ✅ Email field
 - ✅ Message field
@@ -30,11 +31,13 @@ npm install @emailjs/browser
 ## 🔧 **Step 2: EmailJS Account Setup**
 
 ### 1. EmailJS Account Banao:
+
 - Website: https://www.emailjs.com/
 - **Sign Up** karo (free account)
 - Email verify karo
 
 ### 2. Email Service Add Karo:
+
 - Dashboard me jao
 - **Email Services** section me
 - **Add New Service** click karo
@@ -43,24 +46,29 @@ npm install @emailjs/browser
 - Service name rakho: `gmail` (ya koi bhi naam)
 
 ### 3. Email Template Banao:
+
 - **Email Templates** section me
 - **Create New Template** click karo
 - Template settings:
-  - **To Email:** `businesswriter33@gmail.com`
+
+  - **To Email:** `purnimarani086@gmail.com`
   - **From Name:** `{{from_name}}`
   - **Subject:** `New Contact Form Message from {{from_name}}`
   - **Message:**
+
     ```
     Name: {{from_name}}
     Email: {{from_email}}
-    
+
     Message:
     {{message}}
     ```
+
 - Template save karo
 - Template ID copy karo
 
 ### 4. Public Key Copy Karo:
+
 - **Account** → **General** section me
 - **Public Key** copy karo
 
@@ -73,7 +81,7 @@ npm install @emailjs/browser
 ### Pehle Import Add Karo (file ke top me):
 
 ```jsx
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 ```
 
 ### Phir `handleSubmit` Function Update Karo:
@@ -81,16 +89,16 @@ import emailjs from '@emailjs/browser';
 ```jsx
 const handleSubmit = async (e) => {
   e.preventDefault();
-  setError('');
+  setError("");
 
   // Validation
   if (!formData.name || !formData.email || !formData.message) {
-    setError('Please fill in all fields');
+    setError("Please fill in all fields");
     return;
   }
 
-  if (!formData.email.includes('@')) {
-    setError('Please enter a valid email address');
+  if (!formData.email.includes("@")) {
+    setError("Please enter a valid email address");
     return;
   }
 
@@ -98,9 +106,9 @@ const handleSubmit = async (e) => {
 
   try {
     // EmailJS Configuration
-    const serviceID = 'YOUR_SERVICE_ID'; // EmailJS service ID
-    const templateID = 'YOUR_TEMPLATE_ID'; // EmailJS template ID
-    const publicKey = 'YOUR_PUBLIC_KEY'; // EmailJS public key
+    const serviceID = "YOUR_SERVICE_ID"; // EmailJS service ID
+    const templateID = "YOUR_TEMPLATE_ID"; // EmailJS template ID
+    const publicKey = "YOUR_PUBLIC_KEY"; // EmailJS public key
 
     // Send email
     await emailjs.send(
@@ -110,22 +118,21 @@ const handleSubmit = async (e) => {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
-        to_email: 'businesswriter33@gmail.com',
+        to_email: "purnimarani086@gmail.com",
       },
       publicKey
     );
 
     // Success
     setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    
+    setFormData({ name: "", email: "", message: "" });
+
     setTimeout(() => {
       setIsSubmitted(false);
     }, 5000);
-    
   } catch (err) {
-    setError('Failed to send message. Please try again.');
-    console.error('Error sending email:', err);
+    setError("Failed to send message. Please try again.");
+    console.error("Error sending email:", err);
   } finally {
     setIsSubmitting(false);
   }
@@ -133,6 +140,7 @@ const handleSubmit = async (e) => {
 ```
 
 ### Values Replace Karo:
+
 - `YOUR_SERVICE_ID` - EmailJS service ID
 - `YOUR_TEMPLATE_ID` - EmailJS template ID
 - `YOUR_PUBLIC_KEY` - EmailJS public key
@@ -189,6 +197,7 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 Agar EmailJS setup mushkil lag raha ho, toh **Formspree** use kar sakte ho (even easier):
 
 ### Formspree Setup:
+
 1. Website: https://formspree.io/
 2. Free account banao
 3. New form create karo
@@ -208,5 +217,3 @@ Agar EmailJS setup mushkil lag raha ho, toh **Formspree** use kar sakte ho (even
 Ab contact form se messages aapke Gmail me aayenge! 🚀
 
 **Setup complete hone ke baad test karo aur batao!**
-
-
