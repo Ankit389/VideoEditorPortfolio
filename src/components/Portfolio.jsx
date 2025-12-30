@@ -82,7 +82,7 @@ const Portfolio = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full mb-4"></div>
             <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Explore my video editing work and creative projects
+              Explore my video editing work and creative projects. All videos are available on Google Drive.
             </p>
           </motion.div>
 
